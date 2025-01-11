@@ -21,3 +21,12 @@ INSERT INTO
     customers (email, first_name, last_name)
 VALUES
     ('eko@gmail.com', 'Eko', 'khannedy');
+
+-- menambah atau menghapus check constraint
+ALTER TABLE
+    products
+ADD
+    CONSTRAINT price_check CHECK (price >= 1000);
+
+ALTER TABLE
+    products DROP CONSTRAINT price_check;
