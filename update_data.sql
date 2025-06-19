@@ -1,11 +1,3 @@
--- add column kategori dulu
--- alter table products
--- ADD COLUMN category ENUM('Makanan', 'Minuman', 'Lain-Lain')
--- after name;
-
-
-
-
 -- satu kolom
 UPDATE
     products
