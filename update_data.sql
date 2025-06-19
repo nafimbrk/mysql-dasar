@@ -1,10 +1,18 @@
+-- add column kategori dulu
+-- alter table products
+-- ADD COLUMN category ENUM('Makanan', 'Minuman', 'Lain-Lain')
+-- after name;
+
+
+
+
 -- satu kolom
 UPDATE
     products
 SET
     category = 'Makanan'
 WHERE
-    id = 'PO0O1';
+    id = 'P0001';
 
 -- beberapa kolom
 UPDATE
@@ -13,7 +21,7 @@ SET
     category = 'Makanan',
     description = 'Mie Ayam + Ceker'
 WHERE
-    id = 'PO0O3';
+    id = 'P0003';
 
 -- dengan value
 UPDATE
@@ -21,4 +29,4 @@ UPDATE
 SET
     price = price + 5000
 WHERE
-    id = 'POO04';
+    id = 'P0004';
