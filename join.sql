@@ -52,3 +52,10 @@ FROM
     wishlist
     JOIN products ON (products.id = wishlist.id_product)
     JOIN customers ON (customers.id = wishlist.id_customer);
+
+
+
+-- query select langnsung ke beberapa tabel secara sekaligus
+-- untuk melakukan join kita perlu menentukan tabel mana yang merupakan referensi ke tabel lain
+-- tidak ada aturan kalau join harus ada foreign key (tapi disarankan dan umumnya itu pakai foreign key)
+-- join bisa dilakukan untuk lebih dari beberapa tabel
