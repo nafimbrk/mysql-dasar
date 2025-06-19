@@ -17,3 +17,7 @@ SELECT
     p.quantity AS Stok
 FROM
     products AS p;
+
+
+
+-- kalo dua kata pake '' (tanda kutip) example: name as 'Nama Produk'
