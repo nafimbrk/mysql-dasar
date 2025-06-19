@@ -1,3 +1,5 @@
+-- select count(id), name from products;  -- error
+
 SELECT
     COUNT(id) AS 'Total Product'
 FROM
