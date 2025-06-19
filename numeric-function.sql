@@ -1,7 +1,6 @@
-SELECT
-    10,
-    10,
-    10 * 10 AS Hasil;
+SELECT 10 * 10 AS Hasil;
+-- or
+SELECT 10, 10, 10 * 10 AS Hasil;
 
 SELECT
     id,
@@ -12,7 +11,8 @@ FROM
     products;
 
 SELECT
-    id COS(price),
+    id,
+    COS(price),
     SIN(price),
     TAN(price)
 FROM
