@@ -6,7 +6,7 @@ SELECT
         WHEN 'Makanan' THEN 'Enak'
         WHEN 'Minuman' THEN 'Segar'
         ELSE 'Apa Itu?'
-    END AS 'Category'
+    END AS Category
 FROM
     products;
 
