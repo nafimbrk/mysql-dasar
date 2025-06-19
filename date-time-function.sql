@@ -10,7 +10,7 @@ SELECT
         MONTH
         FROM
             created_at
-    ) AS MONTH
+    ) AS Month
 FROM
     products;
 
