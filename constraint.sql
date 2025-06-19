@@ -22,11 +22,14 @@ INSERT INTO
 VALUES
     ('eko@gmail.com', 'Eko', 'khannedy');  -- kalo di eksekusi 2 kali bakal error, karena emailnya harus unique, dan saat kita generate data baru dengan email yang berbeda maka dia id nya bakal 3, dan semua id nya yaitu 1, 3 untuk 2 nya yang gagal di generate tadi
 
--- menambah
+-- menambah / menghapus check constraint
 ALTER TABLE
     products
 ADD
     CONSTRAINT price_check CHECK (price >= 1000);
+
+ALTER TABLE
+    products DROP CONSTRAINT price_check;
 
 -- ditolak
 insert into products(id, name, category, price, quantity)
