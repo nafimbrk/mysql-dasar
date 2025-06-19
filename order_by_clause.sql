@@ -15,3 +15,4 @@ ORDER BY
     price DESC;
 
 -- default asc
+-- bisa pake where juga, example: select * from products where.......
