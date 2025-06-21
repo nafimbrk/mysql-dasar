@@ -28,3 +28,57 @@ Locking Record Manual
   atau SELECT FOR UPDATE lagi, maka proses lain diminta menunggu sampai kita selesai
   melakukan COMMIT atau ROLLBACK transaction
 
+Deadlock
+· Saat kita terlalu banyak melakukan proses Locking, hati-hati akan masalah yang bisa terjadi, yaitu
+  DEADLOCK
+· Deadlock adalah situasi ada 2 proses yang saling menunggu satu sama lain, namun data yang
+  ditunggu dua-duanya di lock oleh proses lainnya, sehingga proses menunggunya ini tidak akan
+  pernah selesai.
+
+Contoh Deadlock
+· Proses 1 melakukan SELECT FOR UPDATE untuk data 001
+· Proses 2 melakukan SELECT FOR UPDATE untuk data 002
+· Proses 1 melakukan SELECT FOR UPDATE untuk data 002, diminta menunggu karena di lock oleh
+  Proses 2
+· Proses 2 melakukan SELECT FOR UPDATE untuk data 001, diminta menunggu karena di lock oleh
+  Proses 1
+· Akhirnya Proses 1 dan Proses 2 saling menunggu
+· Deadlock terjadi
+
+Locking Table
+· MySQL mendukung proses locking terhadap sebuah tabel
+· Jika kita me lock table, artinya satu seluruh data di tabel tersebut akan di lock
+· Ada 2 jenis lock table, yaitu READ dan WRITE
+· Cara melakukan locking table adalah dengan perintah
+    LOCK TABLES nama_table READ;
+    LOCK TABLES nama_Table WRITE
+. Setelah selesai melakukan lock table, kita bisa melakukan unlock dengan perintah : UNLOCK TABLES;
+
+
+Behaviour Lock Tables
+Perintah                Proses yang Melakukan Lock                Proses lain     
+
+READ                    Hanya bisa melakukan read                 Hanya bisa melakukan read                 
+                        terhadap tabel tersebut                   terhadap tabel tersebut, tidak bisa melakukan write
+
+WRITE                   Bisa melakukan read dan write             Tidak bisa melakukan read
+                        terhadap tabel tersebut                   dan write
+
+
+
+
+
+Locking Instance
+. Salah satu fitur lock lainnya di MySQL adalah lock instance
+. Lock instance adalah perintah locking yang akan membuat perintah DDL (data definition language)
+  akan diminta menunggu sampai proses unlock instance
+· Biasanya proses locking instance ini terjadi ketika misal kita ingin melakukan backup data, agar
+  tidak terjadi perubahan terhadap struktur tabel misalnya, kita bisa melakukan locking instance
+· Setelah proses backup selesai, baru kita unlock lagi instance nya
+· Untuk melakukan locking instance, kita bisa gunakan perintah :
+    0 LOCKING INSTANCE FOR BACKEND;
+· Untuk melakukan unlock instance, kita bisa gunakan perintah :
+    0 UNLOCK INSTANCE;
+
+                                                                      
+
